@@ -1,0 +1,85 @@
+D:\Learning ASP. net\Zero Hunger\bin\Zero Hunger.dll.config
+D:\Learning ASP. net\Zero Hunger\bin\Zero Hunger.dll
+D:\Learning ASP. net\Zero Hunger\bin\Zero Hunger.pdb
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\csc.exe
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\csc.exe.config
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\csc.rsp
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\csi.exe
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\csi.exe.config
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\csi.rsp
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\System.AppContext.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\System.Collections.Immutable.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\System.Console.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\System.Globalization.Calendars.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\System.IO.Compression.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\System.IO.FileSystem.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\System.Net.Http.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\System.Net.Sockets.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\System.Reflection.Metadata.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\System.ValueTuple.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\System.Xml.XPath.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\vbc.exe
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\vbc.exe.config
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\vbc.rsp
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\VBCSCompiler.exe
+D:\Learning ASP. net\Zero Hunger\bin\roslyn\VBCSCompiler.exe.config
+D:\Learning ASP. net\Zero Hunger\bin\Antlr3.Runtime.dll
+D:\Learning ASP. net\Zero Hunger\bin\EntityFramework.dll
+D:\Learning ASP. net\Zero Hunger\bin\EntityFramework.SqlServer.dll
+D:\Learning ASP. net\Zero Hunger\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Learning ASP. net\Zero Hunger\bin\Microsoft.Web.Infrastructure.dll
+D:\Learning ASP. net\Zero Hunger\bin\Newtonsoft.Json.dll
+D:\Learning ASP. net\Zero Hunger\bin\System.Web.Helpers.dll
+D:\Learning ASP. net\Zero Hunger\bin\System.Web.Mvc.dll
+D:\Learning ASP. net\Zero Hunger\bin\System.Web.Optimization.dll
+D:\Learning ASP. net\Zero Hunger\bin\System.Web.Razor.dll
+D:\Learning ASP. net\Zero Hunger\bin\System.Web.WebPages.Deployment.dll
+D:\Learning ASP. net\Zero Hunger\bin\System.Web.WebPages.dll
+D:\Learning ASP. net\Zero Hunger\bin\System.Web.WebPages.Razor.dll
+D:\Learning ASP. net\Zero Hunger\bin\WebGrease.dll
+D:\Learning ASP. net\Zero Hunger\bin\EntityFramework.xml
+D:\Learning ASP. net\Zero Hunger\bin\EntityFramework.SqlServer.xml
+D:\Learning ASP. net\Zero Hunger\bin\System.Web.Helpers.xml
+D:\Learning ASP. net\Zero Hunger\bin\System.Web.Mvc.xml
+D:\Learning ASP. net\Zero Hunger\bin\System.Web.Optimization.xml
+D:\Learning ASP. net\Zero Hunger\bin\System.Web.Razor.xml
+D:\Learning ASP. net\Zero Hunger\bin\System.Web.WebPages.xml
+D:\Learning ASP. net\Zero Hunger\bin\System.Web.WebPages.Deployment.xml
+D:\Learning ASP. net\Zero Hunger\bin\System.Web.WebPages.Razor.xml
+D:\Learning ASP. net\Zero Hunger\bin\Newtonsoft.Json.xml
+D:\Learning ASP. net\Zero Hunger\bin\Antlr3.Runtime.pdb
+D:\Learning ASP. net\Zero Hunger\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Learning ASP. net\Zero Hunger\obj\Debug\Zero Hunger.csproj.AssemblyReference.cache
+D:\Learning ASP. net\Zero Hunger\obj\Debug\Zero Hunger.csproj.CoreCompileInputs.cache
+D:\Learning ASP. net\Zero Hunger\obj\Debug\Zero Hunger.csproj.CopyComplete
+D:\Learning ASP. net\Zero Hunger\obj\Debug\Zero Hunger.dll
+D:\Learning ASP. net\Zero Hunger\obj\Debug\Zero Hunger.pdb
+D:\Learning ASP. net\Zero Hunger\bin\AutoMapper.dll
+D:\Learning ASP. net\Zero Hunger\bin\AutoMapper.xml

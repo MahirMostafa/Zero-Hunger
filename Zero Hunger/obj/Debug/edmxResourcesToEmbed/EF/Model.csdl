@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="AssignRequests" Relationship="Self.FK_AssignRequest_Admins" FromRole="Admins" ToRole="AssignRequests" />
+    <NavigationProperty Name="Employees" Relationship="Self.AdminEmployee" FromRole="Admins" ToRole="Employees" />
+    <NavigationProperty Name="Restaurants" Relationship="Self.AdminRestaurant" FromRole="Admins" ToRole="Restaurants" />
+  </EntityType>
+  <EntityType Name="AssignRequest">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CollectRequestId" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="AdminId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Admin" Relationship="Self.FK_AssignRequest_Admins" FromRole="AssignRequests" ToRole="Admins" />
+    <NavigationProperty Name="CollectRequest" Relationship="Self.FK_AssignRequest_CollectRequests" FromRole="AssignRequests" ToRole="CollectRequests" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_AssignRequest_Employees" FromRole="AssignRequests" ToRole="Employees" />
+  </EntityType>
+  <EntityType Name="CollectRequest">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RestaurantId" Type="Int32" Nullable="false" />
+    <Property Name="FoodName" Type="String" MaxLength="225" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FoodQuantity" Type="Int32" Nullable="false" />
+    <Property Name="FoodType" Type="String" MaxLength="225" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaxPreserveTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RequestStatus" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AdminId" Type="Int32" />
+    <Property Name="EmployeeId" Type="Int32" />
+    <NavigationProperty Name="AssignRequests" Relationship="Self.FK_AssignRequest_CollectRequests" FromRole="CollectRequests" ToRole="AssignRequests" />
+    <NavigationProperty Name="Restaurant" Relationship="Self.FK_CollectRequests_Restaurants" FromRole="CollectRequests" ToRole="Restaurants" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="AssignRequests" Relationship="Self.FK_AssignRequest_Employees" FromRole="Employees" ToRole="AssignRequests" />
+    <NavigationProperty Name="Admins" Relationship="Self.AdminEmployee" FromRole="Employees" ToRole="Admins" />
+  </EntityType>
+  <EntityType Name="Restaurant">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="225" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CollectRequests" Relationship="Self.FK_CollectRequests_Restaurants" FromRole="Restaurants" ToRole="CollectRequests" />
+    <NavigationProperty Name="Admins" Relationship="Self.AdminRestaurant" FromRole="Restaurants" ToRole="Admins" />
+  </EntityType>
+  <Association Name="FK_AssignRequest_Admins">
+    <End Role="Admins" Type="Self.Admin" Multiplicity="1" />
+    <End Role="AssignRequests" Type="Self.AssignRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Admins">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssignRequests">
+        <PropertyRef Name="AdminId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssignRequest_CollectRequests">
+    <End Role="CollectRequests" Type="Self.CollectRequest" Multiplicity="1" />
+    <End Role="AssignRequests" Type="Self.AssignRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CollectRequests">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssignRequests">
+        <PropertyRef Name="CollectRequestId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssignRequest_Employees">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
+    <End Role="AssignRequests" Type="Self.AssignRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssignRequests">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CollectRequests_Restaurants">
+    <End Role="Restaurants" Type="Self.Restaurant" Multiplicity="1" />
+    <End Role="CollectRequests" Type="Self.CollectRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restaurants">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CollectRequests">
+        <PropertyRef Name="RestaurantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdminEmployee">
+    <End Role="Admins" Type="Self.Admin" Multiplicity="*" />
+    <End Role="Employees" Type="Self.Employee" Multiplicity="*" />
+  </Association>
+  <Association Name="AdminRestaurant">
+    <End Role="Admins" Type="Self.Admin" Multiplicity="*" />
+    <End Role="Restaurants" Type="Self.Restaurant" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="Zero_Hunger_NGOEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="AssignRequests" EntityType="Self.AssignRequest" />
+    <EntitySet Name="CollectRequests" EntityType="Self.CollectRequest" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="Restaurants" EntityType="Self.Restaurant" />
+    <AssociationSet Name="FK_AssignRequest_Admins" Association="Self.FK_AssignRequest_Admins">
+      <End Role="Admins" EntitySet="Admins" />
+      <End Role="AssignRequests" EntitySet="AssignRequests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssignRequest_CollectRequests" Association="Self.FK_AssignRequest_CollectRequests">
+      <End Role="CollectRequests" EntitySet="CollectRequests" />
+      <End Role="AssignRequests" EntitySet="AssignRequests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssignRequest_Employees" Association="Self.FK_AssignRequest_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="AssignRequests" EntitySet="AssignRequests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CollectRequests_Restaurants" Association="Self.FK_CollectRequests_Restaurants">
+      <End Role="Restaurants" EntitySet="Restaurants" />
+      <End Role="CollectRequests" EntitySet="CollectRequests" />
+    </AssociationSet>
+    <AssociationSet Name="AdminEmployee" Association="Self.AdminEmployee">
+      <End Role="Admins" EntitySet="Admins" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="AdminRestaurant" Association="Self.AdminRestaurant">
+      <End Role="Admins" EntitySet="Admins" />
+      <End Role="Restaurants" EntitySet="Restaurants" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

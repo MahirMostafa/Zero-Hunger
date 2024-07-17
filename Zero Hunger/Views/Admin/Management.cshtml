@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Management";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h2>Management</h2>
+
+@if (TempData["msg"] != null)
+{
+    <p class="text-success">@TempData["msg"]</p>
+}
+
+<div>
+    <span class="btn btn-outline-danger">@Html.ActionLink("Add Admin", "AddAdmin", "Admin") </span>
+    <span class="btn btn-outline-danger">@Html.ActionLink("Add Employee", "AddEmployee", "Admin") </span>
+    <span class="btn btn-outline-danger">@Html.ActionLink("View All Admins", "ViewAdmin", "Admin") </span>
+    <span class="btn btn-outline-danger">@Html.ActionLink("View All Employees", "ViewEmployee", "Admin") </span>
+
+</div>
+

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+<link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+        <div class="container">
+            @Html.ActionLink("Zero Hunger", "Index", "Restaurant", new { area = "" }, new { @class = "navbar-brand" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li>@Html.ActionLink("Home", "Index", "Restaurant", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Profile", "Profile", "Restaurant", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Collect Request", "CollectRequest", "Restaurant", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("History", "History", "Restaurant", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("LogOut", "LogOut", "Restaurant", new { area = "" }, new { @class = "nav-link" })</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Zero Hunger</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/Scripts/moment.min.js"></script>
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/CustomScript.js"></script>
+</body>
+</html>

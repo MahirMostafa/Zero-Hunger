@@ -1,0 +1,60 @@
+﻿@model Zero_Hunger.EF.CollectRequest
+
+@{
+    ViewBag.Title = "Assign";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h2>Assign</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>CollectRequest</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
+    @Html.HiddenFor(model => model.RestaurantId)
+    @Html.HiddenFor(model => model.FoodName)
+    @Html.HiddenFor(model => model.FoodQuantity)
+    @Html.HiddenFor(model => model.FoodType)
+    @Html.HiddenFor(model => model.MaxPreserveTime)
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.AdminId, "AdminId", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.Label(Session["Id"].ToString(), new { @class = "form-control" })
+            @Html.HiddenFor(model => model.AdminId, new { Value = Session["Id"] })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.EmployeeId, "EmployeeId", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("EmployeeId", (SelectList)ViewBag.EmployeeId, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.RequestStatus, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.HiddenFor(model => model.RequestStatus, new { Value = "Assigned" })
+            @Html.ValidationMessageFor(model => model.RequestStatus, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Assign" class="btn btn-danger" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("GoBack", "AssignEmployee")
+</div>

@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Zero_Hunger.EF.CollectRequest>
+
+@{
+    ViewBag.Title = "History";
+    Layout = "~/Views/Shared/Restaurant_Layout.cshtml";
+}
+
+<div class="align-middle">
+    <h3> @Session["Name"]</h3>
+</div>
+
+
+<h2>History</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FoodName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FoodQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FoodType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxPreserveTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequestStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Restaurant.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FoodName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FoodQuantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FoodType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxPreserveTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequestStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Restaurant.Name)
+        </td>
+    </tr>
+}
+
+</table>

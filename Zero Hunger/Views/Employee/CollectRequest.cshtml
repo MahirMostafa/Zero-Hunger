@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Zero_Hunger.EF.AssignRequest>
+
+@{
+    ViewBag.Title = "CollectRequest";
+    Layout = "~/Views/Shared/Employee_Layout.cshtml";
+}
+
+<h2>CollectRequest</h2>
+@if (TempData["msg"] != null)
+{
+    <p class="text-danger">@TempData["msg"]</p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            AssignedBy
+        </th>
+        <th>
+            RestaurantName
+        </th>
+        <th>
+            FoodName
+        </th>
+        <th>
+            FoodQuantity
+        </th>
+        <th>
+            MaxPreserve
+        </th>
+        <th>
+            FoodStatus
+        </th>
+        <th>
+            Address
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Admin.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CollectRequest.Restaurant.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CollectRequest.FoodName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CollectRequest.FoodQuantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CollectRequest.MaxPreserveTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CollectRequest.RequestStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CollectRequest.Restaurant.Address)
+            </td>
+            <td>
+                @if (item.CollectRequest.RequestStatus == "Assigned")
+                {
+                    @Html.ActionLink("Accept", "AcceptReq", new { id = item.CollectRequest.Id }) <text> Or </text>
+                    @Html.ActionLink("Declined", "Declined", new { id = item.CollectRequest.Id })
+                }
+                @if (item.CollectRequest.RequestStatus == "Collecting")
+                {
+                    @Html.ActionLink("Collected", "CollectedReq", new { id = item.CollectRequest.Id })
+                }
+                  
+            </td>
+        </tr>
+    }
+
+</table>
